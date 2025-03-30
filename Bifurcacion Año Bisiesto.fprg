@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion A&#241;o Bisiesto"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 03:52:50 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMzozNjo0NSBwLiBtLjsyNjE1"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMzo1Mjo1MCBwLiBtLjsxOzI3MTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="year" type="Integer" array="False" size=""/>
+            <assign variable="year" expression="0"/>
+            <output expression="&quot;Ingresa el a&#241;o: &quot;" newline="True"/>
+            <input variable="year"/>
+            <if expression="year%4==0">
+                <then>
+                    <output expression="&quot;Bisiesto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No fue Bisiesto&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

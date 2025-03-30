@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion Par o Impar"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 02:54:29 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo1MTo0MiBwLiBtLjsyNjA4"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo1NDoyOSBwLiBtLjsxOzI3MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <assign variable="num" expression="0"/>
+            <input variable="num"/>
+            <if expression="num%2==0">
+                <then>
+                    <output expression="&quot;Par&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Impar&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

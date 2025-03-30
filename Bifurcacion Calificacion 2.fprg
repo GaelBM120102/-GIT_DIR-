@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion Calificacion 2"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 02:51:26 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo0NzoxNSBwLiBtLjsyNjEz"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo1MToyNiBwLiBtLjsxOzI3MTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="calif" type="Integer" array="False" size=""/>
+            <assign variable="calif" expression="0"/>
+            <input variable="calif"/>
+            <if expression="calif&lt;=10">
+                <then>
+                    <if expression="calif&gt;=0">
+                        <then>
+                            <if expression="calif&gt;6">
+                                <then>
+                                    <output expression="&quot;Aprovado&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Reprobado&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Ilogico&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Ilogico&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

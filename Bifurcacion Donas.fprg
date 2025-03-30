@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion Donas"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 03:36:42 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMzoyNjozNyBwLiBtLjsyNjE1"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMzozNjo0MiBwLiBtLjsxOzI3MjA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="donas" type="Integer" array="False" size=""/>
+            <assign variable="donas" expression="0"/>
+            <output expression="&quot;Donas $10&quot;" newline="True"/>
+            <output expression="&quot;Ingrese numero de donas: &quot;" newline="True"/>
+            <input variable="donas"/>
+            <if expression="donas&gt;50">
+                <then>
+                    <assign variable="donas" expression="donas*8"/>
+                    <output expression="&quot;Descuento de $2 por dona&quot;" newline="True"/>
+                    <output expression="donas" newline="True"/>
+                </then>
+                <else>
+                    <if expression="donas&gt;30">
+                        <then>
+                            <assign variable="donas" expression="donas*9"/>
+                            <output expression="&quot;Descuenton de $1 por dona&quot;" newline="True"/>
+                            <output expression="donas" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="donas" expression="donas*10"/>
+                            <output expression="donas" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

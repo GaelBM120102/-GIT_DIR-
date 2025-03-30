@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion Calificacion 1"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 02:47:09 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjozODozOCBwLiBtLjsyNjE4"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo0NzowOSBwLiBtLjsxOzI3MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="calif" type="Integer" array="False" size=""/>
+            <assign variable="calif" expression="0"/>
+            <input variable="calif"/>
+            <if expression="calif&lt;6">
+                <then>
+                    <output expression="&quot;Reprobado&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Aprovado&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

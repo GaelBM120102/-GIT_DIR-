@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Bifurcacion Multiplos de 2 3 y 5"/>
+        <attribute name="authors" value="gbmen"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-29 03:26:32 p. m."/>
+        <attribute name="created" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMjo1NDozOCBwLiBtLjsyNjE2"/>
+        <attribute name="edited" value="Z2JtZW47TUFSVVNLSU47MjAyNS0wMy0yOTswMzoyNjozMiBwLiBtLjsxOzI3MTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="0"/>
+            <input variable="n"/>
+            <if expression="n==7">
+                <then>
+                    <output expression="&quot;7 no es multiplo de nadie&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="n%2==0">
+                        <then>
+                            <output expression="&quot;Multiplo de 2&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="n%3==0">
+                        <then>
+                            <output expression="&quot;Multiplo de 3&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="n%5==0">
+                        <then>
+                            <output expression="&quot;Multiplo de 5&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

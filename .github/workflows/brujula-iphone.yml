@@ -1,0 +1,40 @@
+name: Brújula · iPhone sin suscripciones
+
+on:
+  pull_request:
+    paths:
+      - 'Brujula/Brujula/**'
+      - 'Brujula/Brujula.xcodeproj/**'
+      - 'Brujula/checks/build_ipa.sh'
+      - '.github/workflows/brujula-iphone.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: brujula-iphone-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ipa:
+    # Standard hosted runners are free on public repositories.
+    # A private repository is intentionally skipped to avoid using paid minutes.
+    if: github.event.repository.private == false
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compilar app nativa para iPhone
+        run: bash Brujula/checks/build_ipa.sh
+      - name: Publicar archivo para firmar desde Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: Brujula-iPhone-sin-firmar
+          path: |
+            Brujula/build/Brujula-sin-firmar.ipa
+            Brujula/build/SHA256.txt
+          if-no-files-found: error
+          retention-days: 1

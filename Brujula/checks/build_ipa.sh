@@ -25,5 +25,28 @@ trap 'rm -rf "$brujula_staging"' EXIT
 mkdir -p "$brujula_staging/Payload"
 ditto "$brujula_app" "$brujula_staging/Payload/Brujula.app"
 ditto -c -k --keepParent "$brujula_staging/Payload" "$brujula_output/GAPPEL-sin-firmar.ipa"
+lipo -verify_arch arm64 "$brujula_app/Brujula"
+python3 - "$brujula_output/GAPPEL-sin-firmar.ipa" <<'PY'
+import plistlib
+import sys
+import zipfile
+
+with zipfile.ZipFile(sys.argv[1]) as package:
+    assert package.testzip() is None, 'El IPA contiene un archivo corrupto'
+    prefix = 'Payload/Brujula.app/'
+    info = plistlib.loads(package.read(prefix + 'Info.plist'))
+    assert info['CFBundleDisplayName'] == 'GAPPEL', info
+    assert info['CFBundleName'] == 'GAPPEL', info
+    assert info['CFBundleExecutable'] == 'Brujula', info
+    assert info['CFBundleSupportedPlatforms'] == ['iPhoneOS'], info
+    assert info['MinimumOSVersion'] == '17.0', info
+    assert float(info['MinimumOSVersion']) >= 17
+    assert prefix + info['CFBundleExecutable'] in package.namelist()
+    assert len(info['UIAppFonts']) == 2
+    for font in info['UIAppFonts']:
+        assert prefix + font in package.namelist(), font
+    assert prefix + 'Assets.car' in package.namelist()
+    print('IPA verificado: GAPPEL, iPhoneOS, arm64, iOS 17+, icono y ambas fuentes incluidos.')
+PY
 shasum -a 256 "$brujula_output/GAPPEL-sin-firmar.ipa" > "$brujula_output/SHA256.txt"
 printf '%s\n' 'IPA creado. Debe firmarse con tu cuenta gratuita de Apple desde Sideloadly antes de instalarlo.'

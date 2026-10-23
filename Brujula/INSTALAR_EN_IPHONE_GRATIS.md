@@ -12,7 +12,9 @@ La rama preparada se llama `codex/brujula-iphone-gratis`. Agrega la app en la ca
 
 Cuando la compilación finalice correctamente, el artefacto de GitHub Actions `GAPPEL-iPhone-sin-firmar` contendrá un ZIP con **`GAPPEL-sin-firmar.ipa`**. El IPA todavía debe firmarse en Windows: no se instala tocándolo directamente en Safari. El script que lo construye es `checks/build_ipa.sh`.
 
-**Estado al preparar esta guía:** todavía no se ha ejecutado la compilación de Xcode ni se ha generado un IPA real. La publicación del código está pendiente de autorización. La validación sintáctica realizada no sustituye la compilación.
+**Estado:** GAPPEL ya compiló correctamente con Xcode en GitHub Actions y se generó el IPA real para iPhone. La instalación y las pruebas en tu dispositivo se completan siguiendo los pasos de abajo.
+
+[Descargar el instalador de la primera compilación](https://github.com/GaelBM120102/-GIT_DIR-/actions/runs/39888430535/artifacts/12473681580). Descarga el ZIP desde tu PC mientras el artefacto esté disponible; extrae el archivo `.ipa` para utilizarlo en Sideloadly.
 
 ## 2. Preparar Windows
 

@@ -17,15 +17,15 @@ xcodebuild \
   CODE_SIGN_IDENTITY='' \
   build
 
-brujula_app="$brujula_output/DerivedData/Build/Products/Release-iphoneos/Brujula.app"
+brujula_app="$brujula_output/DerivedData/Build/Products/Release-iphoneos/GAPPEL.app"
 test -d "$brujula_app"
-test -f "$brujula_app/Brujula"
+test -f "$brujula_app/GAPPEL"
 brujula_staging="$(mktemp -d "$brujula_output/package.XXXXXX")"
 trap 'rm -rf "$brujula_staging"' EXIT
 mkdir -p "$brujula_staging/Payload"
-ditto "$brujula_app" "$brujula_staging/Payload/Brujula.app"
+ditto "$brujula_app" "$brujula_staging/Payload/GAPPEL.app"
 ditto -c -k --keepParent "$brujula_staging/Payload" "$brujula_output/GAPPEL-sin-firmar.ipa"
-lipo "$brujula_app/Brujula" -verify_arch arm64
+lipo "$brujula_app/GAPPEL" -verify_arch arm64
 python3 - "$brujula_output/GAPPEL-sin-firmar.ipa" <<'PY'
 import plistlib
 import sys
@@ -33,11 +33,11 @@ import zipfile
 
 with zipfile.ZipFile(sys.argv[1]) as package:
     assert package.testzip() is None, 'El IPA contiene un archivo corrupto'
-    prefix = 'Payload/Brujula.app/'
+    prefix = 'Payload/GAPPEL.app/'
     info = plistlib.loads(package.read(prefix + 'Info.plist'))
     assert info['CFBundleDisplayName'] == 'GAPPEL', info
     assert info['CFBundleName'] == 'GAPPEL', info
-    assert info['CFBundleExecutable'] == 'Brujula', info
+    assert info['CFBundleExecutable'] == 'GAPPEL', info
     assert info['CFBundleSupportedPlatforms'] == ['iPhoneOS'], info
     assert info['MinimumOSVersion'] == '17.0', info
     assert float(info['MinimumOSVersion']) >= 17

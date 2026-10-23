@@ -16,7 +16,7 @@ struct RootView: View {
 
     var body: some View {
         TabView(selection: $tab) {
-            page(title: "brújula ✦") { TodayView { capture = Capture(kind: $0.kind, entry: $0) } add: { capture = Capture(kind: $0) } }
+            page(title: "GAPPEL ✦") { TodayView { capture = Capture(kind: $0.kind, entry: $0) } add: { capture = Capture(kind: $0) } }
                 .tabItem { Label("Hoy", systemImage: "sun.max") }.tag(0)
             page(title: "Tus pendientes") { TasksView { capture = Capture(kind: .task, entry: $0) } }
                 .tabItem { Label("Pendientes", systemImage: "checkmark.circle") }.tag(1)

@@ -1,4 +1,4 @@
-# Brújula en tu iPhone desde Windows — $0, sin suscripciones
+# GAPPEL en tu iPhone desde Windows — $0, sin suscripciones
 
 La ruta preparada compila la app en GitHub Actions y la firma e instala desde Windows con Sideloadly y tu cuenta gratuita de Apple. No requiere una cuenta Apple Developer de pago ni TestFlight.
 
@@ -10,7 +10,7 @@ Esta ruta requiere subir **el código y los recursos visuales** a un repositorio
 
 La rama preparada se llama `codex/brujula-iphone-gratis`. Agrega la app en la carpeta `Brujula` y el proceso de compilación en `.github/workflows/brujula-iphone.yml`, conservando los ejercicios existentes del repositorio conectado.
 
-Cuando la compilación finalice correctamente, el artefacto de GitHub Actions `Brujula-iPhone-sin-firmar` contendrá un ZIP con **`Brujula-sin-firmar.ipa`**. El IPA todavía debe firmarse en Windows: no se instala tocándolo directamente en Safari. El script que lo construye es `checks/build_ipa.sh`.
+Cuando la compilación finalice correctamente, el artefacto de GitHub Actions `GAPPEL-iPhone-sin-firmar` contendrá un ZIP con **`GAPPEL-sin-firmar.ipa`**. El IPA todavía debe firmarse en Windows: no se instala tocándolo directamente en Safari. El script que lo construye es `checks/build_ipa.sh`.
 
 **Estado al preparar esta guía:** todavía no se ha ejecutado la compilación de Xcode ni se ha generado un IPA real. La publicación del código está pendiente de autorización. La validación sintáctica realizada no sustituye la compilación.
 
@@ -21,14 +21,14 @@ Cuando la compilación finalice correctamente, el artefacto de GitHub Actions `B
 3. Conecta el iPhone desbloqueado a la PC con un cable USB y acepta «Confiar en esta computadora» en el iPhone.
 4. Abre Sideloadly y comprueba que detecta tu iPhone.
 
-## 3. Instalar Brújula
+## 3. Instalar GAPPEL
 
-1. Arrastra `Brujula-sin-firmar.ipa` a Sideloadly.
+1. Arrastra `GAPPEL-sin-firmar.ipa` a Sideloadly.
 2. Selecciona el iPhone y escribe tu cuenta gratuita de Apple **en Sideloadly**. Completa ahí la autenticación que pida Apple. No compartas contraseñas ni códigos de verificación en el chat.
 3. Pulsa **Start**. Sideloadly firma la app para tu iPhone y la instala.
 4. Si iOS lo solicita, confía en la firma en **Ajustes → General → VPN y gestión de dispositivos**.
 5. Si iOS lo solicita, activa **Ajustes → Privacidad y seguridad → Modo de desarrollador**, reinicia y confirma la activación.
-6. Abre **Brújula** desde su icono en el iPhone.
+6. Abre **GAPPEL** desde su icono en el iPhone.
 
 El proyecto requiere iOS 17 o posterior. Los nombres de los ajustes pueden variar según tu versión de iOS.
 
@@ -36,7 +36,7 @@ El proyecto requiere iOS 17 o posterior. Los nombres de los ajustes pueden varia
 
 La firma de una cuenta gratuita dura **7 días**. Renovarla también es gratuito. Sideloadly puede renovarla automáticamente cuando su programa auxiliar está funcionando y detecta el iPhone por USB o por Wi-Fi configurado. Si la PC está apagada o no puede comunicarse con el iPhone, la renovación automática no está garantizada.
 
-Mantén la misma cuenta de Apple y el mismo identificador al renovar o actualizar. No borres Brújula para renovar la firma: eliminar la app borra sus datos locales. Exporta periódicamente tus datos desde «Mi espacio». Esta primera versión exporta JSON, pero aún no permite importarlo desde la interfaz.
+Mantén la misma cuenta de Apple y el mismo identificador al renovar o actualizar. No borres GAPPEL para renovar la firma: eliminar la app borra sus datos locales. Exporta periódicamente tus datos desde «Mi espacio». Esta primera versión exporta JSON, pero aún no permite importarlo desde la interfaz.
 
 Si la firma vence, la app deja de abrir hasta volver a firmarla. No implica una obligación de pago.
 

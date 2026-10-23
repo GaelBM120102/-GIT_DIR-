@@ -1,4 +1,4 @@
-# Brújula ✦ — iPhone
+# GAPPEL ✦ — iPhone
 
 App nativa SwiftUI para organizar tareas, planes y pensamientos, con estética de graffiti y datos guardados localmente en el iPhone. Requiere iOS 17 o posterior.
 

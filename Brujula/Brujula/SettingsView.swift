@@ -39,7 +39,7 @@ struct SettingsView: View {
                 }
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("brújula ✦").font(.largeTitle.weight(.black))
+                        Text("GAPPEL ✦").font(.custom("PermanentMarker-Regular", size: 34, relativeTo: .largeTitle))
                         Text("Tu vida, a tu ritmo.").font(.headline)
                         Text("Versión inicial · iPhone · iOS 17 o posterior").font(.caption).foregroundStyle(.secondary)
                     }.padding(.vertical, 12)
@@ -53,7 +53,7 @@ struct SettingsView: View {
                     }
                 }
                 .onAppear { name = store.data.name; appearance = store.data.appearance }
-                .fileExporter(isPresented: $exporting, document: document, contentType: .json, defaultFilename: "brujula-respaldo") { result in
+                .fileExporter(isPresented: $exporting, document: document, contentType: .json, defaultFilename: "gappel-respaldo") { result in
                     if case .failure = result { exportError = "No se pudo exportar la copia. Vuelve a intentarlo." }
                 }
                 .alert("Copia de seguridad", isPresented: Binding(get: { exportError != nil }, set: { if !$0 { exportError = nil } })) { Button("Entendido") { exportError = nil } } message: { Text(exportError ?? "") }

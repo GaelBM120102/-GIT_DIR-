@@ -24,6 +24,6 @@ brujula_staging="$(mktemp -d "$brujula_output/package.XXXXXX")"
 trap 'rm -rf "$brujula_staging"' EXIT
 mkdir -p "$brujula_staging/Payload"
 ditto "$brujula_app" "$brujula_staging/Payload/Brujula.app"
-ditto -c -k --keepParent "$brujula_staging/Payload" "$brujula_output/Brujula-sin-firmar.ipa"
-shasum -a 256 "$brujula_output/Brujula-sin-firmar.ipa" > "$brujula_output/SHA256.txt"
+ditto -c -k --keepParent "$brujula_staging/Payload" "$brujula_output/GAPPEL-sin-firmar.ipa"
+shasum -a 256 "$brujula_output/GAPPEL-sin-firmar.ipa" > "$brujula_output/SHA256.txt"
 printf '%s\n' 'IPA creado. Debe firmarse con tu cuenta gratuita de Apple desde Sideloadly antes de instalarlo.'

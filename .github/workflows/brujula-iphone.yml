@@ -1,4 +1,4 @@
-name: Brújula · iPhone sin suscripciones
+name: GAPPEL · iPhone sin suscripciones
 
 on:
   pull_request:
@@ -32,9 +32,9 @@ jobs:
       - name: Publicar archivo para firmar desde Windows
         uses: actions/upload-artifact@v4
         with:
-          name: Brujula-iPhone-sin-firmar
+          name: GAPPEL-iPhone-sin-firmar
           path: |
-            Brujula/build/Brujula-sin-firmar.ipa
+            Brujula/build/GAPPEL-sin-firmar.ipa
             Brujula/build/SHA256.txt
           if-no-files-found: error
           retention-days: 1

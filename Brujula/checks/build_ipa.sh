@@ -25,7 +25,7 @@ trap 'rm -rf "$brujula_staging"' EXIT
 mkdir -p "$brujula_staging/Payload"
 ditto "$brujula_app" "$brujula_staging/Payload/Brujula.app"
 ditto -c -k --keepParent "$brujula_staging/Payload" "$brujula_output/GAPPEL-sin-firmar.ipa"
-lipo -verify_arch arm64 "$brujula_app/Brujula"
+lipo "$brujula_app/Brujula" -verify_arch arm64
 python3 - "$brujula_output/GAPPEL-sin-firmar.ipa" <<'PY'
 import plistlib
 import sys
